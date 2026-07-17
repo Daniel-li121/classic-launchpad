@@ -4,9 +4,22 @@
 
 一个恢复传统 macOS Launchpad 全屏应用浏览体验的原生应用。
 
-## 下载
+## 当前版本与兼容性
 
-从 [GitHub Releases](https://github.com/Daniel-li121/classic-launchpad/releases/latest) 下载适用于 Apple Silicon 和 Intel Mac 的通用版本。
+| | |
+| --- | --- |
+| 当前版本 | [v1.0.2](https://github.com/Daniel-li121/classic-launchpad/releases/tag/v1.0.2) |
+| 支持的 macOS 版本 | macOS 15 或更高版本 |
+| 支持的 Mac | Apple 芯片和 Intel 芯片 |
+
+## 安装方法
+
+1. 从[最新 GitHub Release](https://github.com/Daniel-li121/classic-launchpad/releases/latest) 下载 `Classic-Launchpad-1.0.2-universal.zip`。
+2. 解压下载的 ZIP 文件。
+3. 将 `Classic Launchpad.app` 拖入“应用程序”文件夹。
+4. 从“应用程序”文件夹打开 Classic Launchpad。
+
+当前下载包采用本地临时签名，尚未经过 Apple 公证。首次启动时，macOS 可能会阻止打开。请按住 Control 键点击 App，选择“打开”，然后再次确认“打开”。如果仍然被阻止，请打开“系统设置 → 隐私与安全性”，找到关于 Classic Launchpad 的提示并选择“仍要打开”。请仅对从本仓库下载的副本执行此操作。
 
 ## 功能
 
@@ -40,6 +53,17 @@ open "dist/Classic Launchpad.app"
 ```
 
 手势监听使用 MIT 许可的 [OpenMultitouchSupport](https://github.com/Kyome22/OpenMultitouchSupport)，它通过 macOS 私有 MultitouchSupport 框架读取原始触点。因此本地版无需辅助功能权限，但不适用于 Mac App Store 分发。
+
+## 提交 Issue
+
+提交前请先搜索[现有 Issues](https://github.com/Daniel-li121/classic-launchpad/issues)，确认没有相同问题。如果尚未有人反馈，请[创建新 Issue](https://github.com/Daniel-li121/classic-launchpad/issues/new)，并提供：
+
+- Classic Launchpad 版本
+- macOS 版本以及 Mac 型号或芯片
+- 可以稳定复现问题的操作步骤
+- 预期结果和实际结果
+- 相关截图、录屏或日志
+- 如果是手势问题，请附上 Classic Launchpad 和 macOS 的触控板相关设置
 
 ## 开发
 
