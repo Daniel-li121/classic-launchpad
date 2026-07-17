@@ -2,6 +2,10 @@
 
 一个恢复传统 macOS Launchpad 全屏应用浏览体验的原生应用。
 
+## 下载
+
+从 [GitHub Releases](https://github.com/Daniel-li121/classic-launchpad/releases/latest) 下载适用于 Apple Silicon 和 Intel Mac 的通用版本。
+
 ## 功能
 
 - 全屏显示 `/Applications`、`/System/Applications` 和用户应用目录中的 App
