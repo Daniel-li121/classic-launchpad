@@ -4,6 +4,8 @@ English | [简体中文](README.zh-CN.md)
 
 A native macOS app that brings back the classic full-screen Launchpad experience.
 
+📖 [User Guide](docs/User-Guide.md)
+
 ## Current release and compatibility
 
 | | |

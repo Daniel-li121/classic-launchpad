@@ -4,6 +4,8 @@
 
 一个恢复传统 macOS Launchpad 全屏应用浏览体验的原生应用。
 
+📖 [使用手册](docs/User-Guide.zh-CN.md)
+
 ## 当前版本与兼容性
 
 | | |
