@@ -7,6 +7,17 @@ enum TrackpadGestureAction: Equatable, Sendable {
     case pinchOut
 }
 
+enum TrackpadListenerActivation {
+    static func attempt(
+        isListening: () -> Bool,
+        startListening: () -> Void
+    ) -> Bool {
+        guard !isListening() else { return true }
+        startListening()
+        return isListening()
+    }
+}
+
 /// Recognizes the old Launchpad gesture from four raw trackpad touch points.
 /// A radial measurement avoids confusing horizontal four-finger Space swipes
 /// with a pinch.
@@ -132,11 +143,23 @@ final class TrackpadGestureMonitor {
                   self.sessionID == sessionID,
                   !Task.isCancelled else { return }
 
+            var failedAttempts = 0
             while self.sessionID == sessionID, !Task.isCancelled {
-                if manager.isListening || manager.startListening() {
+                // OMSManager.startListening() can report success during login
+                // before macOS has made the trackpad available, even though no
+                // listener was installed. Verify the real state and keep
+                // retrying until the listener actually exists.
+                if TrackpadListenerActivation.attempt(
+                    isListening: { manager.isListening },
+                    startListening: { _ = manager.startListening() }
+                ) {
                     return
                 }
-                try? await Task.sleep(for: .milliseconds(250))
+                failedAttempts += 1
+                let retryDelay: Duration = failedAttempts <= 40
+                    ? .milliseconds(250)
+                    : .seconds(1)
+                try? await Task.sleep(for: retryDelay)
             }
         }
     }

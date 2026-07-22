@@ -10,13 +10,13 @@
 
 | | |
 | --- | --- |
-| 当前版本 | [v1.0.2](https://github.com/Daniel-li121/classic-launchpad/releases/tag/v1.0.2) |
+| 当前版本 | [v1.0.3](https://github.com/Daniel-li121/classic-launchpad/releases/tag/v1.0.3) |
 | 支持的 macOS 版本 | macOS 15 或更高版本 |
 | 支持的 Mac | Apple 芯片和 Intel 芯片 |
 
 ## 安装方法
 
-1. 从[最新 GitHub Release](https://github.com/Daniel-li121/classic-launchpad/releases/latest) 下载 `Classic-Launchpad-1.0.2-universal.zip`。
+1. 从[最新 GitHub Release](https://github.com/Daniel-li121/classic-launchpad/releases/latest) 下载 `Classic-Launchpad-1.0.3-universal.zip`。
 2. 解压下载的 ZIP 文件。
 3. 将 `Classic Launchpad.app` 拖入“应用程序”文件夹。
 4. 从“应用程序”文件夹打开 Classic Launchpad。

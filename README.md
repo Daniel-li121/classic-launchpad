@@ -10,13 +10,13 @@ A native macOS app that brings back the classic full-screen Launchpad experience
 
 | | |
 | --- | --- |
-| Current version | [v1.0.2](https://github.com/Daniel-li121/classic-launchpad/releases/tag/v1.0.2) |
+| Current version | [v1.0.3](https://github.com/Daniel-li121/classic-launchpad/releases/tag/v1.0.3) |
 | Supported macOS versions | macOS 15 or later |
 | Supported Macs | Apple Silicon and Intel |
 
 ## Installation
 
-1. Download `Classic-Launchpad-1.0.2-universal.zip` from the [latest GitHub Release](https://github.com/Daniel-li121/classic-launchpad/releases/latest).
+1. Download `Classic-Launchpad-1.0.3-universal.zip` from the [latest GitHub Release](https://github.com/Daniel-li121/classic-launchpad/releases/latest).
 2. Unzip the download.
 3. Drag `Classic Launchpad.app` into the **Applications** folder.
 4. Open Classic Launchpad from the Applications folder.

@@ -2,7 +2,7 @@
 
 English | [简体中文](User-Guide.zh-CN.md)
 
-This guide applies to Classic Launchpad 1.0.2 on macOS 15 or later.
+This guide applies to Classic Launchpad 1.0.3 on macOS 15 or later.
 
 ## Quick start
 
@@ -79,6 +79,10 @@ When Classic Launchpad intercepts the four-finger gesture, the system Apps inter
 On some macOS versions, Dock can retain an old gesture registration. To guarantee that the native Apps gesture returns, Classic Launchpad briefly reloads Dock during quit if raw gesture monitoring was used. The Dock may disappear and reappear for a moment; this is expected and does not close your running apps or windows.
 
 You can also turn off **Intercept four-finger gesture** in settings to return the gesture to macOS while leaving Classic Launchpad running.
+
+### Gesture monitoring recovers automatically after login
+
+When Classic Launchpad starts as a login item, macOS may still be initializing the trackpad service. The app now verifies that the listener was actually installed and keeps retrying automatically until the trackpad becomes available. You no longer need to quit and reopen the app after restarting the Mac. The same retry mechanism also supports an external trackpad connected later.
 
 ### The app list refreshes automatically
 
