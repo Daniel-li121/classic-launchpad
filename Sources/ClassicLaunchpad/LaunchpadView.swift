@@ -162,7 +162,7 @@ struct LaunchpadView: View {
         }
         .buttonStyle(.plain)
         .foregroundStyle(.white.opacity(0.9))
-        .help("设置（⌘,）")
+        .help(L10n.text(.settingsHelp))
     }
 
     private var loadingView: some View {
@@ -170,7 +170,7 @@ struct LaunchpadView: View {
             ProgressView()
                 .controlSize(.large)
                 .tint(.white)
-            Text("正在查找应用…")
+            Text(L10n.text(.findingApplications))
                 .font(.system(size: 15, weight: .medium))
                 .foregroundStyle(.white.opacity(0.82))
         }
@@ -180,9 +180,9 @@ struct LaunchpadView: View {
         VStack(spacing: 12) {
             Image(systemName: "magnifyingglass")
                 .font(.system(size: 30, weight: .light))
-            Text("没有找到应用")
+            Text(L10n.text(.noApplicationsFound))
                 .font(.system(size: 17, weight: .medium))
-            Text("试试其他名称")
+            Text(L10n.text(.tryAnotherName))
                 .font(.system(size: 13))
                 .opacity(0.72)
         }
@@ -515,9 +515,9 @@ private struct ApplicationTile: View {
             }
         }
         .help(application.name)
-        .accessibilityLabel("打开 \(application.name)")
+        .accessibilityLabel(L10n.openApplication(application.name))
         .accessibilityAddTraits(.isButton)
-        .accessibilityAction(named: Text("打开"), action)
+        .accessibilityAction(named: Text(L10n.text(.open)), action)
     }
 }
 
@@ -531,7 +531,7 @@ private struct SearchField: View {
                 .font(.system(size: 13, weight: .semibold))
                 .foregroundStyle(.white.opacity(0.72))
 
-            TextField("搜索", text: $text)
+            TextField(L10n.text(.search), text: $text)
                 .textFieldStyle(.plain)
                 .font(.system(size: 14, weight: .medium))
                 .foregroundStyle(.white)
@@ -577,7 +577,7 @@ private struct PageIndicator: View {
                         .contentShape(Rectangle().inset(by: -6))
                 }
                 .buttonStyle(.plain)
-                .accessibilityLabel("第 \(index + 1) 页")
+                .accessibilityLabel(L10n.page(index + 1))
             }
         }
         .opacity(pageCount > 1 ? 1 : 0)

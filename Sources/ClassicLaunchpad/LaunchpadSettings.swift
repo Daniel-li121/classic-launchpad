@@ -76,10 +76,10 @@ struct LaunchpadSettingsView: View {
                 Image(systemName: "gearshape.fill")
                     .font(.system(size: 22))
                     .foregroundStyle(.secondary)
-                Text("Classic Launchpad 设置")
+                Text(L10n.text(.settingsTitle))
                     .font(.system(size: 19, weight: .semibold))
                 Spacer()
-                Button("完成") { dismiss() }
+                Button(L10n.text(.done)) { dismiss() }
                     .keyboardShortcut(.defaultAction)
             }
 
@@ -87,8 +87,8 @@ struct LaunchpadSettingsView: View {
 
             SettingsRow(
                 icon: "moon.fill",
-                title: "后台运行",
-                detail: "开启时收起后仍会接管手势；关闭后，收起界面会退出 App 并把手势交还给 macOS。"
+                title: L10n.text(.runInBackgroundTitle),
+                detail: L10n.text(.runInBackgroundDetail)
             ) {
                 Toggle("", isOn: $settings.runInBackground)
                     .labelsHidden()
@@ -97,8 +97,8 @@ struct LaunchpadSettingsView: View {
 
             SettingsRow(
                 icon: "hand.pinch.fill",
-                title: "接管四指手势",
-                detail: "启用后，拇指与三指捏合会打开 Classic Launchpad；关闭此项或退出 App 时会立即交还给 macOS。"
+                title: L10n.text(.interceptGestureTitle),
+                detail: L10n.text(.interceptGestureDetail)
             ) {
                 Toggle("", isOn: $settings.interceptSystemGesture)
                     .labelsHidden()
@@ -107,8 +107,8 @@ struct LaunchpadSettingsView: View {
 
             SettingsRow(
                 icon: "power",
-                title: "登录时自动启动",
-                detail: "登录 macOS 后自动启动，以便随时使用触控板手势。"
+                title: L10n.text(.launchAtLoginTitle),
+                detail: L10n.text(.launchAtLoginDetail)
             ) {
                 Toggle(
                     "",
@@ -125,24 +125,24 @@ struct LaunchpadSettingsView: View {
 
             if settings.loginItemRequiresApproval {
                 HStack {
-                    Text("macOS 需要你在“登录项与扩展”中批准此登录项。")
+                    Text(L10n.text(.loginItemApproval))
                         .font(.system(size: 12))
                         .foregroundStyle(.orange)
                     Spacer()
-                    Button("打开系统设置") {
+                    Button(L10n.text(.openSystemSettings)) {
                         settings.openLoginItemSettings()
                     }
                 }
             }
 
             if let error = settings.loginItemError {
-                Text("无法修改登录项：\(error)")
+                Text(L10n.loginItemError(error))
                     .font(.system(size: 12))
                     .foregroundStyle(.red)
                     .textSelection(.enabled)
             }
 
-            Text("建议先将 App 放入“应用程序”文件夹，再启用自动启动。退出时为恢复系统 Apps 手势，Dock 会短暂重载。")
+            Text(L10n.text(.settingsFooter))
                 .font(.system(size: 11))
                 .foregroundStyle(.tertiary)
         }

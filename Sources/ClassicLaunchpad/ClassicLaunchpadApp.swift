@@ -139,27 +139,27 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 
         let appItem = NSMenuItem()
         let appMenu = NSMenu()
-        appMenu.addItem(withTitle: "关于 Classic Launchpad", action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
+        appMenu.addItem(withTitle: L10n.text(.aboutClassicLaunchpad), action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
         appMenu.addItem(.separator())
-        appMenu.addItem(withTitle: "隐藏 Classic Launchpad", action: #selector(NSApplication.hide(_:)), keyEquivalent: "h")
-        let settingsItem = NSMenuItem(title: "设置…", action: #selector(showSettings), keyEquivalent: ",")
+        appMenu.addItem(withTitle: L10n.text(.hideClassicLaunchpad), action: #selector(NSApplication.hide(_:)), keyEquivalent: "h")
+        let settingsItem = NSMenuItem(title: L10n.text(.settings), action: #selector(showSettings), keyEquivalent: ",")
         settingsItem.target = self
         appMenu.addItem(settingsItem)
-        appMenu.addItem(withTitle: "退出 Classic Launchpad", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        appMenu.addItem(withTitle: L10n.text(.quitClassicLaunchpad), action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         appItem.submenu = appMenu
         mainMenu.addItem(appItem)
 
         let viewItem = NSMenuItem()
-        let viewMenu = NSMenu(title: "显示")
-        let showItem = NSMenuItem(title: "显示 Launchpad", action: #selector(showLaunchpad), keyEquivalent: "l")
+        let viewMenu = NSMenu(title: L10n.text(.view))
+        let showItem = NSMenuItem(title: L10n.text(.showLaunchpad), action: #selector(showLaunchpad), keyEquivalent: "l")
         showItem.keyEquivalentModifierMask = [.command, .shift]
         showItem.target = self
         viewMenu.addItem(showItem)
-        let refreshItem = NSMenuItem(title: "重新扫描应用", action: #selector(refreshApplications), keyEquivalent: "r")
+        let refreshItem = NSMenuItem(title: L10n.text(.rescanApplications), action: #selector(refreshApplications), keyEquivalent: "r")
         refreshItem.keyEquivalentModifierMask = [.command]
         refreshItem.target = self
         viewMenu.addItem(refreshItem)
-        let searchItem = NSMenuItem(title: "搜索", action: #selector(focusSearch), keyEquivalent: "f")
+        let searchItem = NSMenuItem(title: L10n.text(.search), action: #selector(focusSearch), keyEquivalent: "f")
         searchItem.keyEquivalentModifierMask = [.command]
         searchItem.target = self
         viewMenu.addItem(searchItem)

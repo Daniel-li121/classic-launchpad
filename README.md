@@ -10,13 +10,14 @@ A native macOS app that brings back the classic full-screen Launchpad experience
 
 | | |
 | --- | --- |
-| Current version | [v1.0.4](https://github.com/Daniel-li121/classic-launchpad/releases/tag/v1.0.4) |
+| Current version | [v1.0.5](https://github.com/Daniel-li121/classic-launchpad/releases/tag/v1.0.5) |
 | Supported macOS versions | macOS 15 or later |
 | Supported Macs | Apple Silicon only |
+| Interface languages | English, Simplified Chinese, Japanese |
 
 ## Installation
 
-1. Download `Classic-Launchpad-1.0.4-arm64.zip` from the [latest GitHub Release](https://github.com/Daniel-li121/classic-launchpad/releases/latest).
+1. Download `Classic-Launchpad-1.0.5-arm64.zip` from the [latest GitHub Release](https://github.com/Daniel-li121/classic-launchpad/releases/latest).
 2. Unzip the download.
 3. Drag `Classic Launchpad.app` into the **Applications** folder.
 4. Open Classic Launchpad from the Applications folder.
@@ -31,6 +32,7 @@ The current download uses a local ad-hoc signature and has not been notarized by
 - Interactive dragging, edge resistance, and classic Launchpad-style page transitions
 - Cached wallpaper blur, on-demand rendering of adjacent pages, and app icon preloading
 - Built-in settings for background operation, four-finger gesture interception, and launch at login
+- Interface automatically follows the macOS language in English, Simplified Chinese, or Japanese
 - Global classic “thumb + three fingers” pinch gesture to show Launchpad and spread gesture to dismiss it
 - Search by app name or bundle identifier
 - Click an icon to launch an app and dismiss Launchpad automatically

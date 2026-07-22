@@ -10,13 +10,14 @@
 
 | | |
 | --- | --- |
-| 当前版本 | [v1.0.4](https://github.com/Daniel-li121/classic-launchpad/releases/tag/v1.0.4) |
+| 当前版本 | [v1.0.5](https://github.com/Daniel-li121/classic-launchpad/releases/tag/v1.0.5) |
 | 支持的 macOS 版本 | macOS 15 或更高版本 |
 | 支持的 Mac | 仅 Apple 芯片 |
+| 界面语言 | 简体中文、English、日本語 |
 
 ## 安装方法
 
-1. 从[最新 GitHub Release](https://github.com/Daniel-li121/classic-launchpad/releases/latest) 下载 `Classic-Launchpad-1.0.4-arm64.zip`。
+1. 从[最新 GitHub Release](https://github.com/Daniel-li121/classic-launchpad/releases/latest) 下载 `Classic-Launchpad-1.0.5-arm64.zip`。
 2. 解压下载的 ZIP 文件。
 3. 将 `Classic Launchpad.app` 拖入“应用程序”文件夹。
 4. 从“应用程序”文件夹打开 Classic Launchpad。
@@ -31,6 +32,7 @@
 - 跟手拖动、边缘阻尼和传统 Launchpad 风格的整页横向滑动动画
 - 缓存式壁纸模糊、邻页按需渲染和应用图标预加载
 - 内置设置：后台运行、四指手势接管和登录时自动启动
+- 界面会根据 macOS 系统语言自动切换简体中文、English 或日本語
 - 传统“拇指 + 三指”捏拢全局唤出、张开收起手势
 - 按名称或 Bundle ID 搜索
 - 单击图标启动应用，启动后自动收起
