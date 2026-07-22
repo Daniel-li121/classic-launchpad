@@ -10,13 +10,13 @@
 
 | | |
 | --- | --- |
-| 当前版本 | [v1.0.3](https://github.com/Daniel-li121/classic-launchpad/releases/tag/v1.0.3) |
+| 当前版本 | [v1.0.4](https://github.com/Daniel-li121/classic-launchpad/releases/tag/v1.0.4) |
 | 支持的 macOS 版本 | macOS 15 或更高版本 |
-| 支持的 Mac | Apple 芯片和 Intel 芯片 |
+| 支持的 Mac | 仅 Apple 芯片 |
 
 ## 安装方法
 
-1. 从[最新 GitHub Release](https://github.com/Daniel-li121/classic-launchpad/releases/latest) 下载 `Classic-Launchpad-1.0.3-universal.zip`。
+1. 从[最新 GitHub Release](https://github.com/Daniel-li121/classic-launchpad/releases/latest) 下载 `Classic-Launchpad-1.0.4-arm64.zip`。
 2. 解压下载的 ZIP 文件。
 3. 将 `Classic Launchpad.app` 拖入“应用程序”文件夹。
 4. 从“应用程序”文件夹打开 Classic Launchpad。
@@ -46,13 +46,7 @@
 open "dist/Classic Launchpad.app"
 ```
 
-打包脚本会构建 Release 版本、生成应用图标、创建 `.app` 并进行本地临时签名。
-
-生成同时兼容 Apple Silicon 与 Intel 的分享 ZIP：
-
-```bash
-./scripts/package-app.sh --universal
-```
+打包脚本会构建仅适用于 Apple 芯片的 arm64 Release 版本、生成应用图标、创建并本地签名 `.app`，同时输出可分享的 `dist/Classic-Launchpad-<版本>-arm64.zip`。
 
 手势监听使用 MIT 许可的 [OpenMultitouchSupport](https://github.com/Kyome22/OpenMultitouchSupport)，它通过 macOS 私有 MultitouchSupport 框架读取原始触点。因此本地版无需辅助功能权限，但不适用于 Mac App Store 分发。
 

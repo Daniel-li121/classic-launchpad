@@ -8,27 +8,19 @@ fi
 ROOT="${0:A:h:h}"
 APP_NAME="Classic Launchpad"
 APP_VERSION="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$ROOT/Resources/Info.plist")"
-UNIVERSAL=false
-if [[ "${1:-}" == "--universal" ]]; then
-    UNIVERSAL=true
+if (( $# > 0 )); then
+    print -u2 "Usage: ./scripts/package-app.sh"
+    exit 64
 fi
 
-if $UNIVERSAL; then
-    BUILD_DIR="$ROOT/.build-universal/apple/Products/Release"
-    APP_DIR="$ROOT/dist/universal/$APP_NAME.app"
-else
-    BUILD_DIR="$ROOT/.build/release"
-    APP_DIR="$ROOT/dist/$APP_NAME.app"
-fi
+APP_DIR="$ROOT/dist/$APP_NAME.app"
+ARCHIVE="$ROOT/dist/Classic-Launchpad-$APP_VERSION-arm64.zip"
 CONTENTS="$APP_DIR/Contents"
 ICONSET="$ROOT/.build/AppIcon.iconset"
 
 cd "$ROOT"
-if $UNIVERSAL; then
-    swift build -c release --arch arm64 --arch x86_64 --build-path .build-universal
-else
-    swift build -c release
-fi
+swift build -c release --arch arm64
+BUILD_DIR="$(swift build -c release --arch arm64 --show-bin-path)"
 
 rm -rf "$APP_DIR" "$ICONSET"
 mkdir -p "$CONTENTS/MacOS" "$CONTENTS/Resources" "$CONTENTS/Frameworks" "$ICONSET" "$ROOT/dist"
@@ -48,9 +40,6 @@ iconutil -c icns "$ICONSET" -o "$CONTENTS/Resources/AppIcon.icns"
 
 codesign --force --deep --sign - "$APP_DIR"
 
-if $UNIVERSAL; then
-    ARCHIVE="$ROOT/dist/Classic-Launchpad-$APP_VERSION-universal.zip"
-    ditto -c -k --sequesterRsrc --keepParent "$APP_DIR" "$ARCHIVE"
-    echo "$ARCHIVE"
-fi
+ditto -c -k --sequesterRsrc --keepParent "$APP_DIR" "$ARCHIVE"
+echo "$ARCHIVE"
 echo "$APP_DIR"

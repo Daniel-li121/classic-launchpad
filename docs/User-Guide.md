@@ -2,7 +2,7 @@
 
 English | [简体中文](User-Guide.zh-CN.md)
 
-This guide applies to Classic Launchpad 1.0.3 on macOS 15 or later.
+This guide applies to Classic Launchpad 1.0.4 on Apple silicon Macs running macOS 15 or later. Intel Macs are not supported.
 
 ## Quick start
 

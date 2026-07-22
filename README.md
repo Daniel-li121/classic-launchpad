@@ -10,13 +10,13 @@ A native macOS app that brings back the classic full-screen Launchpad experience
 
 | | |
 | --- | --- |
-| Current version | [v1.0.3](https://github.com/Daniel-li121/classic-launchpad/releases/tag/v1.0.3) |
+| Current version | [v1.0.4](https://github.com/Daniel-li121/classic-launchpad/releases/tag/v1.0.4) |
 | Supported macOS versions | macOS 15 or later |
-| Supported Macs | Apple Silicon and Intel |
+| Supported Macs | Apple Silicon only |
 
 ## Installation
 
-1. Download `Classic-Launchpad-1.0.3-universal.zip` from the [latest GitHub Release](https://github.com/Daniel-li121/classic-launchpad/releases/latest).
+1. Download `Classic-Launchpad-1.0.4-arm64.zip` from the [latest GitHub Release](https://github.com/Daniel-li121/classic-launchpad/releases/latest).
 2. Unzip the download.
 3. Drag `Classic Launchpad.app` into the **Applications** folder.
 4. Open Classic Launchpad from the Applications folder.
@@ -46,13 +46,7 @@ Requires macOS 15 or later and a Swift 6 toolchain. After its first launch, the 
 open "dist/Classic Launchpad.app"
 ```
 
-The packaging script creates a release build, generates the app icon, assembles the `.app` bundle, and applies a local ad-hoc signature.
-
-To create a shareable ZIP that supports both Apple Silicon and Intel Macs:
-
-```bash
-./scripts/package-app.sh --universal
-```
+The packaging script creates an arm64 release build for Apple Silicon, generates the app icon, assembles and locally signs the `.app` bundle, and writes a shareable ZIP to `dist/Classic-Launchpad-<version>-arm64.zip`.
 
 Gesture monitoring uses the MIT-licensed [OpenMultitouchSupport](https://github.com/Kyome22/OpenMultitouchSupport), which reads raw touch points through macOS's private MultitouchSupport framework. This means the local build does not require Accessibility permission, but it is not suitable for Mac App Store distribution.
 

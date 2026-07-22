@@ -2,7 +2,7 @@
 
 [English](User-Guide.md) | 简体中文
 
-本手册适用于 Classic Launchpad 1.0.3，支持 macOS 15 或更高版本。
+本手册适用于 Classic Launchpad 1.0.4，仅支持运行 macOS 15 或更高版本的 Apple 芯片 Mac，不再支持 Intel Mac。
 
 ## 快速开始
 
